@@ -1,0 +1,40 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.comment-top {
+  flex-direction: row;
+  display: flex;
+  padding-top: 5px;
+}
+
+.comment-date {
+  margin-left: 5px;
+  font-size: 13px;
+}
+.comment-body {
+  font-size: 15px;
+  line-height: 20px;
+  padding-left: 30px;
+}
+.likes {
+  display: flex;
+  flex-direction: row;
+  padding-left: 30px;
+}
+
+.likes > * {
+  cursor: pointer;
+}
+.comment-icon {
+  display: flex;
+}
+i.user.icon {
+  font-size: 24px;
+}
+i.thumbs.up.icon,
+i.thumbs.down.icon {
+  color: slategray;
+}

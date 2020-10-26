@@ -1,0 +1,87 @@
+.top-nav-container {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+}
+.nav-bar-topleft {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav-bar-middle {
+  padding-top: 10px;
+  width: 600px;
+  margin-right: 84px;
+}
+.nav-bar-right {
+  display: flex;
+  padding-right: 30px;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+}
+.search-button {
+  justify-content: center;
+  width: 60px;
+}
+
+.video-icon {
+  margin-right: 25px;
+  margin-top: 10px;
+}
+
+.watchtube-logo {
+  max-width: 125px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  margin-top: 20px !important;
+  padding-left: 20px !important;
+  width: 1.5em !important;
+  height: 1.5em !important;
+  margin-right: 10px !important;
+  margin-left: 10px !important;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.sign-in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid blue;
+  padding: 6px 12px;
+  height: 40px;
+  min-width: 90px;
+  cursor: pointer;
+}
+.sign-in p {
+  font-size: 14px;
+  font-weight: bold;
+}
+.user-icon {
+  padding-bottom: 20px;
+}
+
+i.video.icon {
+  font-size: 20px;
+}
+
+i.user.circle.icon.user-icon {
+  font-size: 24px;
+}
+
+i.bars.icon.hamburger-menu {
+  font-size: 20px;
+}

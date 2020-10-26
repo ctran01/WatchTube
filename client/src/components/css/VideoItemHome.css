@@ -1,0 +1,22 @@
+.video-list-home__video {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 10px;
+  margin-bottom: 30px;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.video-list-home-video__videoTitle {
+  /* margin: 10px; */
+  font-weight: bold;
+}
+
+.video-list-home-video__videoSubTitle {
+  color: #606060;
+}
+
+.link {
+  color: black;
+}
