@@ -1,7 +1,7 @@
 import React from "react";
 import VideoListHome from "./VideoListHome";
 import "./css/MainContent.css";
-import TopNavBar from './TopNavBar'
+import TopNavBar from "./NavigationBar/TopNavBar";
 
 class Home extends React.Component {
   componentDidMount() {

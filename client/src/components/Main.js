@@ -4,7 +4,7 @@ import VideoList from "./VideoList";
 import "./css/MainContent.css";
 import Home from "./Home";
 import APIKey from "./apis/apiKey";
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar/NavigationBar";
 import SearchedVideo from "./SearchedVideo";
 import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 
@@ -119,61 +119,61 @@ class Main extends React.Component {
       //   {/* <Route exact path="/">
       //     <Redirect to="/home"></Redirect>
       //   </Route> */}
-        // {/* <Route
-        //   exact
-        //   path="/video"
-        //   render={() => (
-        //     <>
-        //       <NavigationBar
-        //         onSearchSubmit={this.onSearchSubmit}
-        //       ></NavigationBar>
-        //       <SearchedVideo
-        //         video={this.state.selectedVideo}
-        //         onVideoSelect={this.onVideoSelect}
-        //         videos={this.state.videos}
-        //         search={this.state.search}
-        //         statistics={this.state.statistics}
-        //         comments={this.state.comments}
-        //         selectedVideo={this.state.selectedVideo}
-        //       ></SearchedVideo>
-        //     </>
-        //   )}
-        // ></Route>
-        // <Route
-        //   path="/search"
-        //   render={() => (
-        //     <>
-        //       <NavigationBar
-        //         onSearchSubmit={this.onSearchSubmit}
-        //       ></NavigationBar>
-        //       <div className="main-content-container-home">
-        //         <VideoList
-        //           onVideoSelect={this.onVideoSelect}
-        //           videos={this.state.videos}
-        //           search={this.state.search}
-        //           statistics={this.state.statistics}
-        //         ></VideoList>
-        //       </div>
-        //     </>
-        //   )}
-        // ></Route>
-        // <Route
-        //   exact
-        //   path="/home"
-        //   render={() => (
-        //     <>
-        //       <NavigationBar
-        //         onSearchSubmit={this.onSearchSubmit}
-        //       ></NavigationBar>
-        //       <Home
-        //         onVideoSelect={this.onVideoSelect}
-        //         videos={this.state.videos}
-        //         search={this.state.search}
-        //         getRecommendedVideos={this.getRecommendedVideos}
-        //       ></Home>
-        //     </>
-        //   )}
-        // ></Route> */}
+      // {/* <Route
+      //   exact
+      //   path="/video"
+      //   render={() => (
+      //     <>
+      //       <NavigationBar
+      //         onSearchSubmit={this.onSearchSubmit}
+      //       ></NavigationBar>
+      //       <SearchedVideo
+      //         video={this.state.selectedVideo}
+      //         onVideoSelect={this.onVideoSelect}
+      //         videos={this.state.videos}
+      //         search={this.state.search}
+      //         statistics={this.state.statistics}
+      //         comments={this.state.comments}
+      //         selectedVideo={this.state.selectedVideo}
+      //       ></SearchedVideo>
+      //     </>
+      //   )}
+      // ></Route>
+      // <Route
+      //   path="/search"
+      //   render={() => (
+      //     <>
+      //       <NavigationBar
+      //         onSearchSubmit={this.onSearchSubmit}
+      //       ></NavigationBar>
+      //       <div className="main-content-container-home">
+      //         <VideoList
+      //           onVideoSelect={this.onVideoSelect}
+      //           videos={this.state.videos}
+      //           search={this.state.search}
+      //           statistics={this.state.statistics}
+      //         ></VideoList>
+      //       </div>
+      //     </>
+      //   )}
+      // ></Route>
+      // <Route
+      //   exact
+      //   path="/home"
+      //   render={() => (
+      //     <>
+      //       <NavigationBar
+      //         onSearchSubmit={this.onSearchSubmit}
+      //       ></NavigationBar>
+      //       <Home
+      //         onVideoSelect={this.onVideoSelect}
+      //         videos={this.state.videos}
+      //         search={this.state.search}
+      //         getRecommendedVideos={this.getRecommendedVideos}
+      //       ></Home>
+      //     </>
+      //   )}
+      // ></Route> */}
       // </Switch>
     );
   }

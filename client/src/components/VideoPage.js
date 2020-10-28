@@ -1,26 +1,29 @@
-import React from 'react';
-import NavigationBar from "./NavigationBar";
+import React, { useContext, useEffect, useState } from "react";
+import NavigationBar from "./NavigationBar/NavigationBar";
 import SearchedVideo from "./SearchedVideo";
+import { Context as VideoContext } from "../context/VideoContext";
 
+const Videopage = () => {
+  const { state, onVideoSelect, onSearchSubmit } = useContext(VideoContext);
+  // const [statistics, setStatistics] = useState();
 
-const Videopage = () =>{
-
-  return(
+  // useEffect(() => {
+  //   setStatistics(state.selectedVideo.statistics);
+  // });
+  return (
     <>
-      <NavigationBar
-        onSearchSubmit={this.onSearchSubmit}
-      ></NavigationBar>
+      <NavigationBar onSearchSubmit={onSearchSubmit}></NavigationBar>
       <SearchedVideo
-        video={this.state.selectedVideo}
-        onVideoSelect={this.onVideoSelect}
-        videos={this.state.videos}
-        search={this.state.search}
-        statistics={this.state.statistics}
-        comments={this.state.comments}
-        selectedVideo={this.state.selectedVideo}
+        video={state.selectedVideo}
+        onVideoSelect={onVideoSelect}
+        videos={state.videos}
+        search={state.search}
+        // statistics={statistics}
+        // comments={this.state.comments}
+        selectedVideo={state.selectedVideo}
       ></SearchedVideo>
     </>
-  )
-}
+  );
+};
 
-export default Videopage
+export default Videopage;

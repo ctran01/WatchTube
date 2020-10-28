@@ -73,7 +73,7 @@ class VideoDetail extends React.Component {
             {this.props.video.snippet.description}
           </p>
         </div>
-        <VideoCommentsList comments={this.props.comments}></VideoCommentsList>
+        {/* <VideoCommentsList comments={this.props.comments}></VideoCommentsList> */}
       </div>
     );
   }
