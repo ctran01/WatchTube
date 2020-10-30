@@ -16,14 +16,7 @@ class LeftNavBar extends React.Component {
               <p>Home</p>
             </li>
           </NavLink>
-          <NavLink exact to="/trending">
-            <li>
-              <div className="icon-container flex">
-                <i className="fire icon"></i>
-              </div>
-              <p>Trending</p>
-            </li>
-          </NavLink>
+
           <NavLink exact to="/subscriptions">
             <li>
               <div className="icon-container flex">

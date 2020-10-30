@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import UserContext from "./context/UserContext";
 import { Provider as VideoProvider } from "./context/VideoContext";
 import Routes from "./components/Routes";
 import LandingPage from "./components/LandingPage/LandingPage";
-import Main from "./components/Main";
-import Home from "./components/Home";
 
 const App = () => {
   const [auth, setAuth] = useState(localStorage.getItem("token") || "");

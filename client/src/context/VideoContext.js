@@ -156,6 +156,7 @@ const getRecommendedVideos = (dispatch) => {
     dispatch({ type: "recommendedVideos", payload: { videos: videoListData } });
   };
 };
+
 // getRecommendedVideos = async () => {
 //   const response = await youtube.get(`/videos?part=snippet&part=statistics`, {
 //     params: {
@@ -165,11 +166,9 @@ const getRecommendedVideos = (dispatch) => {
 //     },
 //   });
 //   //Axios doesn't require response.json(). Already parses when invoked
-//   console.log(response);
 //   const {
 //     data: { items },
 //   } = response;
-//   // console.log(Data);
 //   // let items = Data;
 //   this.setState({
 //     videos: items,

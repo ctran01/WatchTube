@@ -11,47 +11,40 @@ import {
   CircularProgress,
 } from "@material-ui/core";
 import { useForm } from "react-hook-form";
+import TopNavBarLanding from "./TopNavBarLanding";
 
 const Login = () => {
   const { auth, setAuth } = useContext(UserContext);
   const { register, handleSubmit, errors, clearErrors } = useForm();
-  const { loginError, setLoginError } = useState("");
+  const [loginError, setLoginError] = useState("");
+
   const onSubmit = async (data) => {
+    const { email, password } = data;
     try {
-      const res = apiServer.post(`/login`, {
-        headers: { "Content-Type": "application/json" },
+      const res = await apiServer.post(`/login`, {
+        email: email,
+        password: password,
       });
+
+      if (res.status === 200) {
+        const { id, token, username } = res.data;
+        localStorage.setItem("token", token);
+        localStorage.setItem("username", username);
+        localStorage.setItem("id", id);
+        setAuth(res.data.token);
+      } else {
+        return setLoginError("Something went wrong");
+      }
     } catch (err) {
       console.error(err);
+      return setLoginError("Something went wrong");
     }
   };
   const errorStyles = {
     padding: "0 13px",
-    backgroundColor: "#f8d7da",
+    backgroundColor: "red",
     borderRadius: "4px",
   };
-
-  const CssTextField = withStyles({
-    root: {
-      "& label.Mui-focused": {
-        color: "white",
-      },
-      "& .MuiInput-underline:after": {
-        borderBottomColor: "blue",
-      },
-      "& .MuiOutlinedInput-root": {
-        "& fieldset": {
-          borderColor: "white",
-        },
-        "&:hover fieldset": {
-          borderColor: "white",
-        },
-        "&.Mui-focused fieldset": {
-          borderColor: "blue",
-        },
-      },
-    },
-  })(TextField);
 
   return (
     <>
@@ -69,11 +62,6 @@ const Login = () => {
             backgroundImage: `url(${background})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-
-            // display: "flex",
-            // justifyContent: "center",
-            // alignItems: "center",
-            // flexDirection: "column",
           }}
         >
           <div
@@ -86,15 +74,13 @@ const Login = () => {
               position: "relative",
             }}
           >
+            <TopNavBarLanding />
             <div
               className="outer-signup-form-container"
               style={{
-                // display: "flex",
-                // flexDirection: "column",
                 margin: "0 auto",
                 color: "white",
-                marginTop: "80px",
-                // backgroundColor: "rgba(255,255,255,0.6)",
+                marginTop: "200px",
                 height: "max-content",
                 width: "50ch",
               }}
@@ -109,24 +95,36 @@ const Login = () => {
               >
                 <div className="inner-signup-form-container">
                   <h1>Welcome Back!</h1>
-                  <CssTextField
-                    label="Email Address"
+
+                  <input
                     name="email"
                     type="email"
-                    variant="outlined"
-                    fullWidth="true"
-                    style={{ margin: "15px 0" }}
-                    inputProps={{
-                      style: { color: "white" },
+                    placeholder="Email Address"
+                    style={{
+                      padding: "10px",
+                      borderRadius: "3px",
+                      border: "1px solid #ddd",
+                      backgroundColor: "transparent",
+                      color: "white",
+                      marginBottom: "20px",
+                      width: "100%",
+                      fontSize: "14px",
+                      boxSizing: "border-box",
+                      margin: "15px 0",
+                      height: "50px",
                     }}
-                    InputLabelProps={{
-                      style: { color: "white" },
-                    }}
-                    inputRef={register({ required: true, maxLength: 255 })}
+                    ref={register({
+                      required: "Required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "invalid email address",
+                      },
+                    })}
                     onChange={(e) => {
                       clearErrors(e.target.name);
                     }}
                   />
+
                   {errors.email?.type === "required" && (
                     <Typography style={errorStyles}>Email required.</Typography>
                   )}
@@ -135,23 +133,26 @@ const Login = () => {
                       Email cannot exceed 50 characters.
                     </Typography>
                   )}
-                  <CssTextField
-                    label="Password"
+                  <input
+                    placeholder="Password"
                     name="password"
                     type="password"
-                    variant="outlined"
-                    fullWidth="true"
-                    style={{ margin: "15px 0" }}
-                    inputProps={{
-                      style: { color: "white" },
+                    style={{
+                      padding: "10px",
+                      borderRadius: "3px",
+                      border: "1px solid #ddd",
+                      backgroundColor: "transparent",
+                      color: "white",
+                      marginBottom: "20px",
+                      width: "100%",
+                      fontSize: "14px",
+                      boxSizing: "border-box",
+                      margin: "15px 0",
+                      height: "50px",
                     }}
-                    InputLabelProps={{
-                      style: { color: "white" },
-                    }}
-                    inputRef={register({
-                      required: true,
+                    ref={register({
+                      required: "Required",
                       minLength: 6,
-                      pattern: /^(?=.*\d)(?=.*[a-z])/,
                     })}
                     onChange={(e) => {
                       clearErrors(e.target.name);
@@ -186,10 +187,24 @@ const Login = () => {
                         margin: "20px 5px 0 0",
                         color: "white",
                         borderColor: "white",
+                        width: "200px",
+                        boxShadow: "5px 5px 5px rgba(0,0,0,.2)",
                       }}
-                      fullWidth="true"
                     >
                       Login
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      href="/"
+                      style={{
+                        margin: "20px 5px 0 0",
+                        color: "white",
+                        borderColor: "white",
+                        width: "200px",
+                        boxShadow: "5px 5px 5px rgba(0,0,0,.2)",
+                      }}
+                    >
+                      Cancel
                     </Button>
                   </div>
                 </div>

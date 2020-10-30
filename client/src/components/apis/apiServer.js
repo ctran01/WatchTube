@@ -2,7 +2,7 @@ import axios from "axios";
 // import config from "../../../../backend/config";
 
 export default axios.create({
-  baseURL: "localhost:8080/",
+  baseURL: "http://localhost:8080/",
 });
 
 // instance.interceptors.request.use(

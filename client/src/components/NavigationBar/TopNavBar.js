@@ -5,8 +5,14 @@ import "../css/TopNavBar.css";
 import logo from "../../images/logo/logo.png";
 
 const TopNavBar = ({ onSearchSubmit }) => {
-  const { auth } = useContext(UserContext);
+  const { auth, setAuth } = useContext(UserContext);
 
+  const signout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("id");
+    setAuth("");
+  };
   return (
     <div className="top-nav-container">
       <section className="nav-bar-topleft">
@@ -23,8 +29,12 @@ const TopNavBar = ({ onSearchSubmit }) => {
           <i className="video icon "></i>
         </div>
         <div className="sign-in">
-          <i className="user circle icon user-icon"></i>
-          <p>SIGN IN</p>
+          <a href="/">
+            <button onClick={() => signout()}>
+              {" "}
+              <p>LOG OUT</p>
+            </button>
+          </a>
         </div>
       </section>
     </div>

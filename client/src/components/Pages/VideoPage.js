@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import NavigationBar from "./NavigationBar/NavigationBar";
-import SearchedVideo from "./SearchedVideo";
-import { Context as VideoContext } from "../context/VideoContext";
+import NavigationBar from "../NavigationBar/NavigationBar";
+import SearchedVideo from "../SearchedVideo";
+import { Context as VideoContext } from "../../context/VideoContext";
 
 const Videopage = () => {
   const { state, onVideoSelect, onSearchSubmit } = useContext(VideoContext);

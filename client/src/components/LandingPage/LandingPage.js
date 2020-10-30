@@ -4,10 +4,11 @@ import logo from "../../images/logo/logo.png";
 import background from "../../images/background4.jpg";
 import TopNavBar from "../NavigationBar/TopNavBar";
 import { Button } from "@material-ui/core";
+import { Redirect } from "react-router-dom";
 const LandingPage = () => {
   const { auth } = useContext(UserContext);
 
-  return (
+  return !auth ? (
     <>
       <div
         style={{
@@ -61,6 +62,8 @@ const LandingPage = () => {
         </div>
       </div>
     </>
+  ) : (
+    <Redirect to="/home" />
   );
 };
 
