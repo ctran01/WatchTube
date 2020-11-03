@@ -55,7 +55,7 @@ class LeftNavBar extends React.Component {
         </ul>
         <div className="divider"></div>
         <ul className="left-nav-bottom">
-          <a href="https://www.linkedin.com/in/chris-tran-/">
+          <a href="https://www.linkedin.com/in/chris-tran-/" target="_blank">
             <li>
               <div className="icon-container flex">
                 <i
@@ -66,7 +66,7 @@ class LeftNavBar extends React.Component {
               <p>LinkedIn</p>
             </li>
           </a>
-          <a href="https://github.com/ctran01">
+          <a href="https://github.com/ctran01" target="_blank">
             <li>
               <div className="icon-container flex">
                 <i className="fa fa-github" style={{ fontSize: "24px" }}></i>

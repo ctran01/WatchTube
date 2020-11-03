@@ -26,39 +26,62 @@ const LandingPage = () => {
           flexDirection: "column",
         }}
       >
-        <div style={{ position: "absolute", top: "100px" }}>
-          <img
-            src={logo}
-            alt="logo"
-            style={{ alignSelf: "center", marginLeft: "130px" }}
-          ></img>
-          <p style={{ color: "white", fontSize: "75px" }}></p>
-          <Button
-            href="/login"
-            variant="contained"
+        <div
+          style={{
+            display: "flex",
+            marginBottom: "600px",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            marginRight: "20px",
+          }}
+        >
+          <img src={logo} alt="logo" style={{}}></img>
+          <p style={{ color: "white", fontSize: "50px" }}>
+            Videos for everyone
+          </p>
+          <div
             style={{
-              fontSize: "15px",
-              marginLeft: "130px",
-              padding: "10px 25px",
-              fontFamily: "inherit",
-              backgroundColor: "white",
+              display: "flex",
+              justifyContent: "space-between",
+              justifyItems: "center",
             }}
           >
-            Login
-          </Button>
-          <Button
-            href="/register"
-            variant="contained"
-            style={{
-              fontSize: "15px",
-              marginLeft: "80px",
-              padding: "10px 25px",
-              fontFamily: "inherit",
-              backgroundColor: "white",
-            }}
-          >
-            Register Now
-          </Button>
+            <a href="/login">
+              <button
+                variant="contained"
+                style={{
+                  fontSize: "15px",
+                  padding: "10px 25px",
+                  borderRadius: "20px",
+                  fontFamily: "inherit",
+                  backgroundColor: "rgba(255,255,255,0.6)",
+                  outline: "none",
+                  border: "none",
+                }}
+              >
+                Login
+              </button>
+            </a>
+
+            <a href="/register">
+              <button
+                variant="contained"
+                style={{
+                  fontSize: "15px",
+                  marginLeft: "80px",
+                  padding: "10px 25px",
+                  fontFamily: "inherit",
+                  borderRadius: "20px",
+                  backgroundColor: "rgba(255,255,255,0.6)",
+                  outline: "none",
+                  border: "none",
+                }}
+              >
+                Sign Up
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </>
