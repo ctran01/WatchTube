@@ -4,7 +4,7 @@ By [Chris Tran](https://github.com/ctran01)
 
 A simple video player based off Youtube using Youtube API. A React app created with Node.js, React, and hooks.
 
-- [Live Demo](https://watchtube-app.herokuapp.com/home)
+- [Live Demo](https://watchtube-app.herokuapp.com)
 - [Technologies](#Technologies)
 - [Features](#Features)
 - [Future Features](#FutureFeatures)
@@ -25,7 +25,7 @@ Project is created wtih
 
 ## Features
 
-YouWatch(WiP) is a video player app. A few of the main features are:
+WatchTube(WiP) is a video player app. A few of the main features are:
 
 - Searching up videos via Youtube API
 - Play videos via Youtube API
