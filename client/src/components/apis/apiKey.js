@@ -1,6 +1,6 @@
-const APIKey = "AIzaSyDxk9HvKd5t9RheU1gOj4dgxl0ql8psMEw";
+const APIKey = "AIzaSyBCxiCGWPZW5ACUC9RSn-OLVlUCQD7DU9Q";
 export default APIKey;
 
-//AIzaSyBUPAQRPUZOMXavNQk_92gctwSzLs-wBms
+//AIzaSyBCxiCGWPZW5ACUC9RSn-OLVlUCQD7DU9Q
 //AIzaSyC5X74HuLVtvEFve2ryQSidY-Ek54kfndw
 //AIzaSyDxk9HvKd5t9RheU1gOj4dgxl0ql8psMEw
